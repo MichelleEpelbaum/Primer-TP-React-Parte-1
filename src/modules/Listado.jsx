@@ -1,6 +1,10 @@
 import { React } from "react";
-import Cita from "./cita";
 import'./Listado.css'
+import Cita from "./cita";
+
+
+
+
 function Listado(){
 
 //logica
