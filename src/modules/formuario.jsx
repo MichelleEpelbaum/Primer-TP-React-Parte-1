@@ -17,8 +17,17 @@ function Formulario (){
             </form>
             </div>
       </Fragment>
+      
     );
-
+        
 }
+var citaObjeto ={
+    nombre: document.getElementsByName("mascota"),
+    dueño:  document.getElementsByName("propietario"),
+    fecha: document.getElementsByName("fecha"),
+    hora: document.getElementsByName("hora"),
+    sintomas: document.getElementsByName("sintomas")
+}
+console.log("cita"+citaObjeto.nombre+citaObjeto.dueño+citaObjeto.fecha+citaObjeto.hora+citaObjeto.sintomas)
 
 export default Formulario
