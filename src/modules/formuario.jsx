@@ -1,33 +1,74 @@
-import{Fragment}from'react'
-import './formulario.css'
+import { Fragment, useState } from "react";
+import "./formulario.css";
 
-function Formulario (){
 
-    return (
-        <Fragment >
-            <div className="one-half column">
-            <h2>Crear mi Cita</h2>
-            <form>
-            <label>Nombre Mascota</label><input type="text" name="mascota" className="u-full-width" placeholder="Nombre Mascota"/>
-                <label>Nombre Dueño</label><input type="text" name="propietario" className="u-full-width"placeholder="Nombre dueño de la mascota" />
-                <label>Fecha</label><input type="date" name="fecha"className="u-full-width" />
-                <label>hora</label><input type="time" name="hora" className="u-full-width"/>
-                <label>Sintomas</label><textarea name="sintomas" className="u-full-width"></textarea>
-                <button type="submit"className="u-full-width button-primary">Agregar Cita</button>
-            </form>
-            </div>
-      </Fragment>
-      
-    );
-        
+function Formulario() {
+    const [mascota,setMascotaName]= useState("") //guarda el valor de setMascotaName en la variable mascota que esta inicializada vacia
+    const [dueño,setDueñoName]= useState("")
+    const [fecha,setFecha]= useState("")
+    const [hora,setHora]= useState("")
+    const [sintomas,setSintomas]= useState("")
+
+  let tomarValores = (e) => {
+    e.preventDefault()
+    let citaObjeto=
+    {
+        mascota: mascota,
+        dueño: dueño,
+        fecha: fecha,
+        hora: hora,
+        sintomas: sintomas
+    }
+    //console.log(citaObjeto.mascota + citaObjeto.dueño+citaObjeto.fecha+citaObjeto.hora+citaObjeto.sintomas)
+  }
+  return (
+    <Fragment>
+      <div className="one-half column">
+        <h2>Crear mi Cita</h2>
+        <form onSubmit={tomarValores}> //al apretar el boton llama a la funcion tomarValores
+          <label>Nombre Mascota</label>
+          <input
+            type="text"
+            name="mascota"
+            className="u-full-width"
+            placeholder="Nombre Mascota"
+            onChange={e => setMascotaName(e.target.value)}//cuando cambia el input lo guarda en la variable setMascotaName 
+          />
+          <label>Nombre Dueño</label>
+          <input
+            type="text"
+            name="propietario"
+            className="u-full-width"
+            placeholder="Nombre dueño de la mascota"
+            onChange={e => setDueñoName(e.target.value)}
+          />
+          <label>Fecha</label>
+          <input 
+          type="date" 
+          name="fecha" 
+          className="u-full-width" 
+          onChange={e => setFecha(e.target.value)}
+          />
+          <label>hora</label>
+          <input 
+          type="time" 
+          name="hora" 
+          className="u-full-width" 
+          onChange={e => setHora(e.target.value)}
+          />
+          <label>Sintomas</label>
+          <textarea 
+          name="sintomas" 
+          className="u-full-width"
+          onChange={e => setSintomas(e.target.value)}
+          ></textarea>
+          <button type="submit" className="u-full-width button-primary">
+            Agregar Cita
+          </button>
+        </form>
+      </div>
+    </Fragment>
+  );
 }
-var citaObjeto ={
-    nombre: document.getElementsByName("mascota"),
-    dueño:  document.getElementsByName("propietario"),
-    fecha: document.getElementsByName("fecha"),
-    hora: document.getElementsByName("hora"),
-    sintomas: document.getElementsByName("sintomas")
-}
-console.log("cita"+citaObjeto.nombre+citaObjeto.dueño+citaObjeto.fecha+citaObjeto.hora+citaObjeto.sintomas)
 
-export default Formulario
+export default Formulario;
