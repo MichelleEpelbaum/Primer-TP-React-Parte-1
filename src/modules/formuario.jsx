@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import "./formulario.css";
 
 
-function Formulario() {
+function Formulario({onAgregarTarea}) {
     const [mascota,setMascotaName]= useState("") //guarda el valor de setMascotaName en la variable mascota que esta inicializada vacia
     const [dueño,setDueñoName]= useState("")
     const [fecha,setFecha]= useState("")

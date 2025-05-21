@@ -1,7 +1,8 @@
 import './Cita.css'
+
 const ReciboCita = (arrayCita) =>
 {
-  
+  let citas=arrayCita
 }
 function Cita() {
   return (
