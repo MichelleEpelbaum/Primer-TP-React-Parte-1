@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState } from "react";
 import'./Listado.css'
 import Cita from "./cita";
 
@@ -6,9 +6,13 @@ import Cita from "./cita";
 
 
 function Listado(){
-
+    
 //logica
-
+const RecibirArray=(ArrayCitas)=>
+{
+    console.log(ArrayCitas)
+    return < ReciboCita citas={ArrayCitas}/>
+}
 
 return(
     <>

@@ -1,5 +1,8 @@
 import './Cita.css'
-
+const ReciboCita = (arrayCita) =>
+{
+  
+}
 function Cita() {
   return (
     <>

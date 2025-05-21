@@ -20,6 +20,7 @@ function Formulario() {
         sintomas: sintomas
     }
     //console.log(citaObjeto.mascota + citaObjeto.dueño+citaObjeto.fecha+citaObjeto.hora+citaObjeto.sintomas)
+    onAgregarTarea(citaObjeto)//manda el objeto a App.jsx
   }
   return (
     <Fragment>
