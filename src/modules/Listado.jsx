@@ -1,28 +1,23 @@
 import { React, useState } from "react";
 import'./Listado.css'
-import Cita from "./cita";
+import Cita from "./Cita";
 
 
 
 
-function Listado(){
-    
-//logica
-const RecibirArray=(ArrayCitas)=>
-{
-    console.log(ArrayCitas)
-    return < ReciboCita citas={ArrayCitas}/>
-}
+function Listado(pepe){
+    console.log(pepe)
 
 return(
     <>
-    <div className="one-half column">
+<div className="one-half column">
     <h2>Administra tus citas</h2>
-    <Cita/>
-    </div>
+    {
+        pepe.Citas.length === 0 ?
+        ( <p>No hay citas</p> ) : ( pepe.Citas.map((cita, index) => (<Cita citita={cita} key={index}/>)) )
+    }
+</div>
     </>
 )
-
-
 }
 export default Listado
