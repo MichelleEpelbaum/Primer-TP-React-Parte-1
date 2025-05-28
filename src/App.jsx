@@ -1,5 +1,3 @@
-
-
 import { useState } from 'react'
 import './App.css'
 import Formulario from './modules/formuario'
@@ -22,7 +20,7 @@ function App() {
   
   return (
     <>
-      <Formulario onAgregarTarea={SacoTareaDelFormulario}/>//llama a la funcion SacoTareaDelFormulario
+      <Formulario onAgregarTarea={SacoTareaDelFormulario}/>{/*llama a la funcion SacoTareaDelFormulario*/}
       <Listado Citas={arrayCitas}/>
     </>
   )

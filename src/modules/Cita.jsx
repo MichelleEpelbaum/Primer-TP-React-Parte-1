@@ -1,7 +1,8 @@
 import './Cita.css'
 
-function Cita({citita}) {
+function Cita({citita, pepito}) {
   console.log(citita)
+  
   return (
     <>
       <div className="cita">
@@ -20,7 +21,7 @@ function Cita({citita}) {
         <p>
           Sintomas: <span>{citita.sintomas}</span>
         </p>
-        <button className="button eliminar u-full-width">Eliminar ×</button>
+        <button className="button eliminar u-full-width" onClick={()=>{pepito(citita.fechaCreacion)}}>Eliminar ×</button>
       </div>
     </>
     );

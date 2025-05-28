@@ -17,7 +17,8 @@ function Formulario({onAgregarTarea}) {
         dueño: dueño,
         fecha: fecha,
         hora: hora,
-        sintomas: sintomas
+        sintomas: sintomas,
+        fechaCreacion: Date.now()
     }
     //console.log(citaObjeto.mascota + citaObjeto.dueño+citaObjeto.fecha+citaObjeto.hora+citaObjeto.sintomas)
     onAgregarTarea(citaObjeto)//manda el objeto a App.jsx
